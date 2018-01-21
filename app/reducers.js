@@ -5,7 +5,7 @@ import { LOCATION_CHANGE } from 'react-router-redux'
 import globalReducer from 'containers/App/reducer'
 
 const routeInitialState = fromJS({
-  locationBeforeTransitions: null
+  location: null
 })
 
 function routeReducer (state = routeInitialState, action) {
@@ -13,7 +13,7 @@ function routeReducer (state = routeInitialState, action) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:
       return state.merge({
-        locationBeforeTransitions: action.payload
+        location: action.payload
       })
     default:
       return state
@@ -21,10 +21,10 @@ function routeReducer (state = routeInitialState, action) {
 }
 
 // Creates main reducer with async loaded ones
-export default function createReducer (asyncReducers) {
+export default function createReducer (injectedReducers) {
   return combineReducers({
     route: routeReducer,
     global: globalReducer,
-    ...asyncReducers
+    ...injectedReducers
   })
 }

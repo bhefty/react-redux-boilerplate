@@ -2,11 +2,12 @@ import { fromJS } from 'immutable'
 
 import {
   selectGlobal,
+  selectRoute,
   makeSelectCurrentText,
   makeSelectLoading,
   makeSelectError,
   makeSelectTranslation,
-  makeSelectLocationState
+  makeSelectLocation
 } from '../selectors'
 
 describe('selectGlobal', () => {
@@ -16,6 +17,16 @@ describe('selectGlobal', () => {
       global: globalState
     })
     expect(selectGlobal(mockedState)).toEqual(globalState)
+  })
+})
+
+describe('selectRoute', () => {
+  it('should select the route state', () => {
+    const routeState = fromJS({})
+    const mockedState = fromJS({
+      route: routeState
+    })
+    expect(selectRoute(mockedState)).toEqual(routeState)
   })
 })
 
@@ -71,28 +82,15 @@ describe('makeSelectTranslation', () => {
   expect(translationSelector(mockedState)).toEqual(translation)
 })
 
-describe('makeSelectLocationState', () => {
-  const locationStateSelector = makeSelectLocationState()
-  it('should select the route as a plain JS object', () => {
+describe('makeSelectLocation', () => {
+  const locationStateSelector = makeSelectLocation()
+  it('should select the location', () => {
     const route = fromJS({
-      locationBeforeTransitions: null
+      location: { pathname: '/foo' }
     })
     const mockedState = fromJS({
       route
     })
-    expect(locationStateSelector(mockedState)).toEqual(route.toJS())
-  })
-
-  it('should set the prevRoutingState when changed', () => {
-    const route = fromJS({
-      locationBeforeTransitions: null
-    })
-    const mockedState = fromJS({
-      route
-    })
-    expect(locationStateSelector(mockedState)).toEqual(route.toJS())
-
-    route.set('locationBeforeTransitions', '/about')
-    expect(locationStateSelector(mockedState)).toEqual(route.toJS())
+    expect(locationStateSelector(mockedState)).toEqual(route.get('location').toJS())
   })
 })
