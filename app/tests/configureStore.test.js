@@ -1,6 +1,6 @@
 // Test store addons
 import { browserHistory } from 'react-router-redux'
-import configureStore from '../store'
+import configureStore from '../configureStore'
 
 describe('configureStore', () => {
   let store

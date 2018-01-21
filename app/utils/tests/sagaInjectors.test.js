@@ -1,7 +1,7 @@
 import { memoryHistory } from 'react-router-dom'
 import { put } from 'redux-saga/effects'
 
-import configureStore from '../../store'
+import configureStore from '../../configureStore'
 import getInjectors, {
   injectSagaFactory,
   ejectSagaFactory

@@ -2,7 +2,7 @@ import { memoryHistory } from 'react-router-dom'
 import { fromJS } from 'immutable'
 import identity from 'lodash/identity'
 
-import configureStore from '../../store'
+import configureStore from '../../configureStore'
 
 import getInjectors, {
   injectReducerFactory
