@@ -1,7 +1,8 @@
 const express = require('express')
 const logger = require('./logger')
 
-const argv = require('minimist')(process.argv.slice(2))
+const argv = require('./argv')
+const port = require('./port')
 const setup = require('./middlewares/frontendMiddleware')
 const isDev = process.env.NODE_ENV !== 'production'
 const ngrok = (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel ? require('ngrok') : false
@@ -21,8 +22,6 @@ setup(app, {
 const customHost = argv.host || process.env.HOST
 const host = customHost || null
 const prettyHost = customHost || 'localhost'
-
-const port = argv.port || process.env.PORT || 3000
 
 // Start the app
 app.listen(port, host, (err) => {
