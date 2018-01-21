@@ -18,21 +18,23 @@
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",
+    "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
+    "preinstall": "npm run npmcheckversion",
     "clean:all": "npm run analyze:clean && npm run test:clean && npm run build:clean",
-    "lint": "npm run lint:js",
-    "lint:js": "./node_modules/.bin/standard --verbose | snazzy",
-    "lint:staged": "lint-staged",
-    "lint-fix": "./node_modules/.bin/standard --fix",
     "postinstall": "npm run build:dll",
     "prebuild": "npm run build:clean",
-    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
-    "build:clean": "npm run test:clean && rimraf .build",
+    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build:clean": "rimraf ./build",
     "build:dll": "node ./internals/scripts/dependencies.js",
     "start": "cross-env NODE_ENV=development node server",
     "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
     "generate": "plop --plopfile internals/generators/index.js",
+    "lint": "npm run lint:js",
+    "lint:js": "./node_modules/.bin/standard --verbose | snazzy",
+    "lint:staged": "lint-staged",
+    "lint-fix": "./node_modules/.bin/standard --fix",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
@@ -102,7 +104,8 @@
       "!app/app.js",
       "!app/routes.js",
       "!app/routeAsyncComponents.js",
-      "!app/utils/asyncComponent.js"
+      "!app/utils/asyncComponent.js",
+      "!app/utils/asyncInjectors.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -157,6 +160,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
+    "add-asset-html-webpack-plugin": "^2.1.2",
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
     "babel-eslint": "8.2.1",
@@ -181,6 +185,7 @@
     "eventsource-polyfill": "0.9.6",
     "exports-loader": "0.6.4",
     "file-loader": "1.1.6",
+    "hoist-non-react-statics": "^2.3.1",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "2.29.0",
     "image-webpack-loader": "3.3.1",
@@ -220,7 +225,10 @@
       "componentDidMount",
       "componentDidUpdate",
       "componentDidCatch",
-      "shouldComponentUpdate"
+      "shouldComponentUpdate",
+      "contextTypes",
+      "displayName",
+      "injectors"
     ]
   }
 }
