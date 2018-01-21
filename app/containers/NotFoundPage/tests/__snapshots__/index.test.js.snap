@@ -1,7 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NotFoundPage /> should render the page 1`] = `
-<h1>
-  404: Page Not Found
-</h1>
+<div
+  className="Wrapper-dyuznp gXPxNs"
+>
+  <div
+    className="container"
+  >
+    <span
+      className="four04-comment"
+    >
+      // ERROR: 404 page not found
+    </span>
+    <br />
+    <span
+      className="four04-if"
+    >
+      if
+    </span>
+     (
+    <span
+      className="four04-not"
+    >
+      !
+    </span>
+    <span
+      className="four04-condition"
+    >
+      <em>
+        found
+      </em>
+    </span>
+    ) 
+    {
+    <br />
+    <span
+      className="four04-exception"
+    >
+        throw
+    </span>
+     (
+    <span
+      className="four04-flip"
+    >
+      "(╯°□°)╯︵ ┻━┻"
+    </span>
+    );
+    <br />
+    }
+  </div>
+</div>
 `;
