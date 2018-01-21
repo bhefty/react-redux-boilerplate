@@ -37,11 +37,11 @@ function Button (props) {
   )
 }
 
-Button.PropTypes = {
+Button.propTypes = {
   handleRoute: PropTypes.func,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  children: PropTypes.node.isRequred
+  children: PropTypes.node
 }
 
 export default Button

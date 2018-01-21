@@ -4,10 +4,10 @@ exports[`<HomePage /> should render the page 1`] = `
 <article>
   <div>
     <section
-      className="CenteredSection-irwQrN fsTpBv Section-hLnjej krqtOe"
+      className="CenteredSection-jZhAJH huHXpx Section-kjlTVo iwZUVc"
     >
       <h1
-        className="H1-ecIwba froXlY"
+        className="H1-gsrphG KFgCL"
       >
         Start your project right away!
       </h1>
@@ -16,15 +16,15 @@ exports[`<HomePage /> should render the page 1`] = `
       </p>
     </section>
     <section
-      className="Section-hLnjej krqtOe"
+      className="Section-kjlTVo iwZUVc"
     >
       <h2
-        className="H2-edqtgr YPeIT"
+        className="H2-eUbBFj foTfOk"
       >
         Try me! Redux Saga API Call
       </h2>
       <form
-        className="Form-gTeswK kDmkMZ"
+        className="Form-dhHGoS dsIrGS"
         onSubmit={undefined}
       >
         <label
@@ -33,7 +33,7 @@ exports[`<HomePage /> should render the page 1`] = `
           Enter some text to see it translated into Yoda-Speak:
           <br />
           <input
-            className="Input-eXLwAq gcQtYv"
+            className="Input-hxTtdt ibVsPk"
             id="text"
             onChange={undefined}
             placeholder="You can use this boilerplate to get started right away!"
@@ -49,7 +49,7 @@ exports[`<HomePage /> should render the page 1`] = `
   </div>
   <div>
     <h2
-      className="H2-edqtgr YPeIT"
+      className="H2-eUbBFj foTfOk"
     >
       Simple counter using Redux actions
     </h2>
