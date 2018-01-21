@@ -1,12 +1,9 @@
-import { take, put, takeLatest } from 'redux-saga/effects'
-import { createMockTask } from 'redux-saga/lib/utils'
-
-import { LOCATION_CHANGE } from 'react-router-redux'
+import { put, takeLatest } from 'redux-saga/effects'
 
 import { LOAD_TRANSLATION } from 'containers/App/constants'
 import { translationLoaded, translationLoadingError } from 'containers/App/actions'
 
-import { getTranslation, translationData } from '../sagas'
+import translationData, { getTranslation } from '../saga'
 
 const text = 'we will translate this'
 
@@ -43,15 +40,9 @@ describe('getTranslation Saga', () => {
 
 describe('translationData Saga', () => {
   const translationDataSaga = translationData()
-  const mockedTask = createMockTask()
 
-  it('should start task to watch for the LOAD_TRANSLATION action', () => {
+  it('should start task to watch for LOAD_TRANSLATION action', () => {
     const takeLatestDescriptor = translationDataSaga.next().value
     expect(takeLatestDescriptor).toEqual(takeLatest(LOAD_TRANSLATION, getTranslation))
-  })
-
-  it('should yield until LOCATION_CHANGE action', () => {
-    const takeDescriptor = translationDataSaga.next(mockedTask).value
-    expect(takeDescriptor).toEqual(take(LOCATION_CHANGE))
   })
 })
