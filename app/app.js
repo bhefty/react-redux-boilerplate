@@ -9,25 +9,26 @@ import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import FontFaceObserver from 'fontfaceobserver'
 import 'sanitize.css/sanitize.css'
 
+// Import root app
+import App from 'containers/App'
+
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions, import/no-webpack-loader-syntax */
-import '!file-loader?name=[name].[ext]!./favicon.ico'
+import '!file-loader?name=[name].[ext]!./images/favicon.ico'
 import '!file-loader?name=[name].[ext]!./manifest.json'
 import 'file-loader?name=[name].[ext]!./.htaccess'
 /* eslint-enable import/no-unresolved, import/extensions */
 
-import configureStore from './store'
+import configureStore from './configureStore'
 
 // Import CSS reset and Global Styles
 import './global-styles'
 import 'mini.css/dist/mini-nord.min.css'
-
-// Import routes
-import RouteConfig from './routes'
 
 // Observer loading of Open Sans
 const openSansObserver = new FontFaceObserver('Open Sans', {})
@@ -43,13 +44,16 @@ openSansObserver.load().then(() => {
 const history = createHistory()
 const initialState = {}
 const store = configureStore(initialState, history)
+const MOUNT_NODE = document.getElementById('app')
 
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <RouteConfig store={store} history={history} />
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
     </Provider>,
-    document.getElementById('app')
+    MOUNT_NODE
   )
 }
 render()
