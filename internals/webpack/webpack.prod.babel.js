@@ -16,18 +16,19 @@ module.exports = require('./webpack.base.babel')({
   },
 
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    // new webpack.LoaderOptionsPlugin({
+    //   minimize: true,
+    //   debug: false
+    // }),
 
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        unused: true,
-        dead_code: true,
-        warnings: false
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     unused: true,
+    //     dead_code: true,
+    //     warnings: false
+    //   }
+    // }),
 
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -54,10 +55,15 @@ module.exports = require('./webpack.base.babel')({
       inject: true
     }),
 
+    // Keep it in the end to capture all HtmlWebpackPlugin's assets manipulation
+    // and leak it's manipulations to HtmlWebpackPlugin
     new OfflinePlugin({
       relativePaths: false,
       publicPath: '/',
+
+      // No need to cache .htaccess. See http://mxs.is/googmp
       excludes: ['.htaccess'],
+
       caches: {
         main: [':rest:'],
 
