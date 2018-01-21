@@ -2,7 +2,13 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
+
+import injectReducer from 'utils/injectReducer'
+import injectSaga from 'utils/injectSaga'
+import reducer from './reducer'
+import saga from './saga'
 
 import { makeSelectTranslation, makeSelectLoading, makeSelectError } from 'containers/App/selectors'
 import H1 from 'components/H1'
@@ -111,4 +117,12 @@ export function mapDispatchToProps (dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+const withConnect = connect(mapStateToProps, mapDispatchToProps)
+const withReducer = injectReducer({ key: 'home', reducer })
+const withSaga = injectSaga({ key: 'home', saga })
+
+export default compose(
+  withReducer,
+  withSaga,
+  withConnect
+)(HomePage)
