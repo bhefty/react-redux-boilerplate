@@ -104,7 +104,8 @@
       "!app/app.js",
       "!app/routes.js",
       "!app/routeAsyncComponents.js",
-      "!app/utils/asyncComponent.js"
+      "!app/utils/asyncComponent.js",
+      "!app/utils/asyncInjectors.js"
     ],
     "coverageThreshold": {
       "global": {
