@@ -2,16 +2,16 @@
 
 exports[`<FeaturePage /> should render the page 1`] = `
 <div
-  className="sc-htpNat gYcMus"
+  className="FeaturePage__Wrapper-jPnsYU lfKkwc"
 >
   <h1
-    className="sc-bdVaJa fUibZh"
+    className="H1-ecIwba froXlY"
   >
     Features
   </h1>
   <hr />
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     Quick scaffolding
   </h3>
@@ -19,7 +19,7 @@ exports[`<FeaturePage /> should render the page 1`] = `
     Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!
   </p>
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     Hot reloading
   </h3>
@@ -27,7 +27,7 @@ exports[`<FeaturePage /> should render the page 1`] = `
     Saved changes to styling and JS code will instantly reload in the browser without needing a page refresh.
   </p>
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     Predictable state management
   </h3>
@@ -35,7 +35,7 @@ exports[`<FeaturePage /> should render the page 1`] = `
     Unidirectional data flow (Redux) allows for change logging and time travel debugging.
   </p>
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     Next-gen JavaScript
   </h3>
@@ -43,7 +43,7 @@ exports[`<FeaturePage /> should render the page 1`] = `
     Use template strings, object destructuring, arrow functions, JSX syntax and more, right out of the box!
   </p>
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     Next-gen CSS
   </h3>
@@ -51,7 +51,7 @@ exports[`<FeaturePage /> should render the page 1`] = `
     Write composable CSS that's co-located with components for complete modularity.
   </p>
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     Industry-standard routing
   </h3>
@@ -59,7 +59,7 @@ exports[`<FeaturePage /> should render the page 1`] = `
     Routing makes it easy to add additional pages to the application (\`/about\`).
   </p>
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     Offline-first
   </h3>
@@ -67,7 +67,7 @@ exports[`<FeaturePage /> should render the page 1`] = `
     Make your web pages available without a network connection the instant a user loads the page.
   </p>
   <h3
-    className="sc-bwzfXH diokWN"
+    className="H3-knyzUA lgjNVi"
   >
     SEO
   </h3>
