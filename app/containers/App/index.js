@@ -1,11 +1,13 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import HomePage from 'containers/HomePage/Loadable'
+import FeaturePage from 'containers/FeaturePage/Loadable'
+import NotFoundPage from 'containers/NotFoundPage/Loadable'
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -16,29 +18,24 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `
 
-export class App extends PureComponent {
-  static propTypes = {
-    children: PropTypes.node.isRequired
-  }
-
-  render () {
-    return (
-      <div>
-        <Helmet
-          titleTemplate='%s - React.js Boilerplate'
-          defaultTitle='React.js Boilerplate'
-          meta={[
-            { name: 'description', content: 'A React.js Boierlplate application with Redux' }
-          ]}
-        />
-        <Header />
-        <AppWrapper>
-          {React.Children.toArray(this.props.children)}
-        </AppWrapper>
-        <Footer />
-      </div>
-    )
-  }
+export default function App () {
+  return (
+    <div>
+      <Helmet
+        titleTemplate='%s - React.js Boilerplate'
+        defaultTitle='React.js Boilerplate'
+      >
+        <meta name='description' content='A React.js Boierlplate application with Redux' />
+      </Helmet>
+      <Header />
+      <AppWrapper>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/features' component={FeaturePage} />
+          <Route path='' component={NotFoundPage} />
+        </Switch>
+      </AppWrapper>
+      <Footer />
+    </div>
+  )
 }
-
-export default withRouter(App)
