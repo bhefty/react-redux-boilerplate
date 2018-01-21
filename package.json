@@ -178,7 +178,6 @@
     "css-loader": "0.28.4",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-15": "^1.0.5",
-    "eslint-plugin-flowtype": "^2.41.0",
     "eventsource-polyfill": "0.9.6",
     "exports-loader": "0.6.4",
     "file-loader": "1.1.6",
@@ -211,6 +210,17 @@
     "env": {
       "jest": true
     },
-    "plugins": "flowtype"
+    "globals": [
+      "state",
+      "propTypes",
+      "componentWillMount",
+      "componentWillReceiveProps",
+      "componentWillUpdate",
+      "componentWillUnmount",
+      "componentDidMount",
+      "componentDidUpdate",
+      "componentDidCatch",
+      "shouldComponentUpdate"
+    ]
   }
 }
