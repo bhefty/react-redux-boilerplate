@@ -24,7 +24,7 @@ module.exports = (options) => ({
         // This is the place to add your own loaders (sass/less/etc.)
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ['style-loader',  'css-loader']
+        use: ['style-loader', 'css-loader']
       }, {
         // Preprocess 3rd party .css files in node_modules
         test: /\.css$/,
