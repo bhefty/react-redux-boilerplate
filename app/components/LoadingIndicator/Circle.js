@@ -45,7 +45,7 @@ const Circle = (props) => {
   return <CirclePrimitive />
 }
 
-Circle.PropTypes = {
+Circle.propTypes = {
   delay: PropTypes.number,
   rotate: PropTypes.number
 }

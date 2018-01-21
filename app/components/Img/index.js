@@ -14,7 +14,7 @@ function Img (props) {
   )
 }
 
-Img.PropTypes = {
+Img.propTypes = {
   src: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
