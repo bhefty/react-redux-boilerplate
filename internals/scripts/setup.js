@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-'use strict';
+'use strict'
 
 const shell = require('shelljs')
 const exec = require('child_process').exec
 const path = require('path')
-const fs   = require('fs')
+const fs = require('fs')
 const animateProgress = require('./helpers/progress')
 const addCheckMark = require('./helpers/checkmark')
 const readline = require('readline')
@@ -81,7 +81,7 @@ function installDeps () {
       installDepsCallback(err || 'Unsported node.js version, make sure you have the latest version installed.')
     } else {
       exec('yarn --version', (err, stdout, stderr) => {
-        if (parseFloat(stdout) < 0.15 || err | process.env.USE_YARN === 'false' ) {
+        if (parseFloat(stdout) < 0.15 || err | process.env.USE_YARN === 'false') {
           exec('npm install', addCheckMark.bind(null, installDepsCallback))
         } else {
           exec('yarn install', addCheckMark.bind(null, installDepsCallback))
