@@ -9,21 +9,11 @@ class Header extends PureComponent {
   render () {
     return (
       <Wrapper>
-        <header>
-          <label className='drawer-toggle button' htmlFor='navigation-toggle' />
-          <Link to='/' className='logo hidden-sm'>
-            <Img src={logo} alt='React Redux Boilerplate Logo' />
-            <span>React Redux Boilerplate</span>
-          </Link>
-          <Link to='/features' className='button pull-right hidden-sm'>Features</Link>
-        </header>
-        <input id='navigation-toggle' type='checkbox' />
-        <nav className='drawer hidden-md hidden-lg'>
-          <label htmlFor='navigation-toggle' className='close' />
-          <br />
-          <Link to='/'>Home</Link>
-          <Link to='/features'>Features</Link>
-        </nav>
+        <Link to='/' id='logo'><Img src={logo} alt='React Redux Boilerplate' /></Link>
+        <Link to='/' id='home' className='button'><span>React Redux Boilerplate</span></Link>
+        <div id='other-links'>
+          <Link to='/features' id='features' className='button'><span>Features</span></Link>
+        </div>
       </Wrapper>
     )
   }
