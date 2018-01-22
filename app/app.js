@@ -28,7 +28,7 @@ import configureStore from './configureStore'
 
 // Import CSS reset and Global Styles
 import './global-styles'
-import 'mini.css/dist/mini-nord.min.css'
+// import 'mini.css/dist/mini-nord.min.css'
 
 // Observer loading of Open Sans
 const openSansObserver = new FontFaceObserver('Open Sans', {})
