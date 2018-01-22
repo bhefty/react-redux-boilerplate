@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 
 import Img from 'components/Img'
-import logo from 'assets/logo_white.png'
+import logo from './logo_white.png'
 import Wrapper from './Wrapper'
 
 class Header extends PureComponent {
