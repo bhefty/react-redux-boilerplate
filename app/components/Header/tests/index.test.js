@@ -4,10 +4,10 @@ import { shallow } from 'enzyme'
 import Header from '../index'
 
 describe('<Header />', () => {
-  it('should render a header', () => {
+  it('should render a styled header called Wrapper', () => {
     const renderedComponent = shallow(
       <Header />
     )
-    expect(renderedComponent.find('header').length).toEqual(1)
+    expect(renderedComponent.find('Wrapper').length).toEqual(1)
   })
 })

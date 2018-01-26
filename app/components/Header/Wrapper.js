@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default styled.div`
+export default styled.header`
   background-color: ${props => props.theme.primary};
   height: 48px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.18), 0 2px 3px rgba(0,0,0,0.26);
