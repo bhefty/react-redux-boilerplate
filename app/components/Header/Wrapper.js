@@ -12,19 +12,22 @@ export default styled.header`
   top: 0;
   z-index: 11101;
   
+  padding: 0 10px;
   display: grid;
-  grid-template-columns: 58px minmax(auto, 275px) 1fr;
   grid-gap: 10px;
+  grid-template-columns: 48px 1fr;
+  grid-auto-flow: column;
+  align-content: center;
 
-  #logo {
-    margin: 0 auto;
-    width: 48px;
+  .header__logo {
     img {
       width: 100%;
     }
   }
 
-  #home {
+  .header__brand {
+    padding 0 10px;
+    justify-self: start;
     font-size: 1.5em;
 
     &:hover {
@@ -32,14 +35,16 @@ export default styled.header`
     }
   }
 
-  #other-links {
-    padding-right: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  .header__links {
+    justify-self: end;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    grid-gap: 10px;
 
     span {
-      padding: 10px;
+      padding: 0 10px;
     }
 
     a:hover {
@@ -47,15 +52,15 @@ export default styled.header`
     }
   }
 
-  a, a:visited {
-    color: ${props => props.theme.whiteMain};
-    text-decoration: none;
-  }
-
-  .button {
+  .header__link {
     display: grid;
     span {
       margin: auto;
     }
+  }
+
+  a, a:visited {
+    color: ${props => props.theme.whiteMain};
+    text-decoration: none;
   }
 `
