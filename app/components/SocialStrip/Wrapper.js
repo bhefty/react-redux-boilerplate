@@ -4,12 +4,12 @@ export default styled.div`
   display: inline-flex;
 
   a {
-    margin: 20px;
+    margin: 0 20px;
   }
 
   .social {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     fill: #f5f5f5;
   }
 `
