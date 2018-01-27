@@ -39,4 +39,55 @@ describe('<Header />', () => {
       expect(renderedComponent.state('expanded')).toBe(false)
     })
   })
+
+  describe('handleKeyDown', () => {
+    it('should toggle expanded to false if escape key is pressed and expanded is true', () => {
+      const renderedComponent = shallow(
+        <Header />
+      )
+      renderedComponent.setState({ expanded: true })
+      expect(renderedComponent.state('expanded')).toBe(true)
+      renderedComponent.instance().handleKeyDown({ keyCode: 27 })
+      expect(renderedComponent.state('expanded')).toBe(false)
+    })
+
+    it('should not toggle expanded to false if key pressed is not escape', () => {
+      const renderedComponent = shallow(
+        <Header />
+      )
+      expect(renderedComponent.state('expanded')).toBe(false)
+      renderedComponent.instance().handleKeyDown({ keyCode: 26 })
+      expect(renderedComponent.state('expanded')).toBe(false)
+    })
+
+    it('should not toggle expanded to false if escape key is pressed and expanded is false', () => {
+      const renderedComponent = shallow(
+        <Header />
+      )
+      expect(renderedComponent.state('expanded')).toBe(false)
+      renderedComponent.instance().handleKeyDown({ keyCode: 27 })
+      expect(renderedComponent.state('expanded')).toBe(false)
+    })
+  })
+
+  describe('setExpandedFalse', () => {
+    it('should set expanded to false if true', () => {
+      const renderedComponent = shallow(
+        <Header />
+      )
+      renderedComponent.setState({ expanded: true })
+      expect(renderedComponent.state('expanded')).toBe(true)
+      renderedComponent.instance().setExpandedFalse()
+      expect(renderedComponent.state('expanded')).toBe(false)
+    })
+
+    it('should not set expanded to false if already false', () => {
+      const renderedComponent = shallow(
+        <Header />
+      )
+      expect(renderedComponent.state('expanded')).toBe(false)
+      renderedComponent.instance().setExpandedFalse()
+      expect(renderedComponent.state('expanded')).toBe(false)
+    })
+  })
 })
