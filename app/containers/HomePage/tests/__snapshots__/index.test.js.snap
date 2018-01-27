@@ -55,18 +55,28 @@ exports[`<HomePage /> should render the page 1`] = `
     </h2>
     Current counter value: 
     <div>
-      <button
-        className="primary"
-        onClick={undefined}
+      <div
+        className="Wrapper-ThVjl dVEFs"
       >
-        Increment
-      </button>
-      <button
-        className="secondary"
-        onClick={undefined}
+        <a
+          className="A-bJefwH gaDVrT"
+          href={undefined}
+          onClick={undefined}
+        >
+          Increment
+        </a>
+      </div>
+      <div
+        className="Wrapper-ThVjl dVEFs"
       >
-        Decrement
-      </button>
+        <a
+          className="A-bJefwH gaDVrT"
+          href={undefined}
+          onClick={undefined}
+        >
+          Decrement
+        </a>
+      </div>
     </div>
   </div>
 </article>

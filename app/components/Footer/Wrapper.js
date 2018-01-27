@@ -1,12 +1,20 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.footer`
-  margin: 0 auto;
-  text-align: center;
+  background-color: ${props => props.theme.primary};
+  color: ${props => props.theme.whiteMain};
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  align-content: center;
+  padding: 10px 0;
 
-  .social {
-    width: 30px;
-    height: 30px;
+  section {
+    text-align: center;
+
+    a, a:visited {
+      text-decoration: none;
+    }
   }
 `
 

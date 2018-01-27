@@ -13,6 +13,7 @@ import saga from './saga'
 import { makeSelectTranslation, makeSelectLoading, makeSelectError } from 'containers/App/selectors'
 import H1 from 'components/H1'
 import H2 from 'components/H2'
+import Button from 'components/Button'
 import TranslatedText from 'components/TranslatedText'
 import CenteredSection from './CenteredSection'
 import Form from './Form'
@@ -88,8 +89,8 @@ export class HomePage extends PureComponent {
           <H2>Simple counter using Redux actions</H2>
           Current counter value: {this.props.count}
           <div>
-            <button className='primary' onClick={this.props.onIncrement}>Increment</button>
-            <button className='secondary' onClick={this.props.onDecrement}>Decrement</button>
+            <Button onClick={this.props.onIncrement}>Increment</Button>
+            <Button onClick={this.props.onDecrement}>Decrement</Button>
           </div>
         </div>
       </article>
