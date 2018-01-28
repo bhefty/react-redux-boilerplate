@@ -73,7 +73,7 @@ Additional features:
 
 1. Clone repo using `git clone --depth=1 https://github.com/bhefty/react-redux-boilerplate.git [your app name]`
 2. Move into the directory: `cd [your app name]`
-3. Run `npm install` or `yarn install` to install dependencies
+3. Run `npm run setup` to install dependencies and clean the repo.
 4. Run `npm start` or `yarn start` to launch the app at `http://localhost:3000`
 
 > Please note that this boilerplate was built by going through every file, line by line, of <a href='https://github.com/react-boilerplate/react-boilerplate'>react-boilerplate</a>
